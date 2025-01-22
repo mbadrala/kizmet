@@ -22,8 +22,17 @@ local function setup(options)
     local offBrown        = "#a38c68"
     local offBlue         = "#92a3b0"
 
-    vim.api.nvim_set_hl(0, "Identifier", { fg = primaryYellow })
-    vim.api.nvim_set_hl(0, "Function", { fg = primaryYellow })
+    local idnt            = "#0f6fd1"
+    local func            = "#328000"
+    local oper            = "#301a0f"
+    local sttm            = "#058989"
+    local num             = "#151daf"
+    local bool            = "#c72240"
+    local type            = "#cc1c16"
+    local str             = "#ff5f00"
+
+    vim.api.nvim_set_hl(0, "Identifier", { fg = idnt })
+    vim.api.nvim_set_hl(0, "Function", { fg = func })
     vim.api.nvim_set_hl(0, "@variable.parameter", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "@variable", { fg = secondaryYellow })
     vim.api.nvim_set_hl(0, "Title", { fg = primaryYellow })
@@ -42,17 +51,17 @@ local function setup(options)
     vim.api.nvim_set_hl(0, "StatusLineNC", { bg = primaryBg, fg = primaryYellow })
     vim.api.nvim_set_hl(0, "StatusLine", { fg = primaryBlack, bg = primaryMagenta })
     vim.api.nvim_set_hl(0, "Comment", { fg = offGray })
-    vim.api.nvim_set_hl(0, "String", { fg = primaryMagenta })
-    vim.api.nvim_set_hl(0, "Number", { fg = primaryYellow })
-    vim.api.nvim_set_hl(0, "Float", { fg = primaryYellow })
-    vim.api.nvim_set_hl(0, "Boolean", { fg = primaryYellow })
-    vim.api.nvim_set_hl(0, "Type", { fg = primaryYellow })
+    vim.api.nvim_set_hl(0, "String", { fg = str })
+    vim.api.nvim_set_hl(0, "Number", { fg = num })
+    vim.api.nvim_set_hl(0, "Float", { fg = num })
+    vim.api.nvim_set_hl(0, "Boolean", { fg = bool })
+    vim.api.nvim_set_hl(0, "Type", { fg = type })
     vim.api.nvim_set_hl(0, "Include", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "Delimiter", { fg = primaryYellow })
-    vim.api.nvim_set_hl(0, "Statement", { fg = primaryYellow })
+    vim.api.nvim_set_hl(0, "Statement", { fg = sttm })
     vim.api.nvim_set_hl(0, "Define", { fg = offBrown })
     vim.api.nvim_set_hl(0, "Structure", { fg = secondaryYellow })
-    vim.api.nvim_set_hl(0, "Operator", { fg = primaryYellow })
+    vim.api.nvim_set_hl(0, "Operator", { fg = oper })
     vim.api.nvim_set_hl(0, "Parens", { bg = none })
     vim.api.nvim_set_hl(0, "Constant", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "Directory", { fg = primaryYellow })
@@ -62,7 +71,7 @@ local function setup(options)
     vim.api.nvim_set_hl(0, "MoreMsg", { fg = primaryMagenta })
     vim.api.nvim_set_hl(0, "SpecialKey", { fg = primaryMagenta })
     vim.api.nvim_set_hl(0, "Question", { fg = primaryMagenta })
-    vim.api.nvim_set_hl(0, "PreProc", { fg = primaryMagenta })
+    vim.api.nvim_set_hl(0, "PreProc", { fg = offGray })
     vim.api.nvim_set_hl(0, "Pmenu", { bg = secondaryBlack, fg = primaryWhite })
     vim.api.nvim_set_hl(0, "PmenuSel", { fg = primaryMagenta, bg = gray })
     vim.api.nvim_set_hl(0, "PmenuSbar", { bg = primaryMagenta })
