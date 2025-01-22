@@ -6,15 +6,15 @@ local function setup(options)
     local primaryWhite    = "#fefefe"
     local primaryBlack    = "#17160B"
     local secondaryBlack  = "#212012"
-    local diffBg          = "#D1C8A7"
-    local primaryGreen    = "#006E51"
-    local secondaryGreen  = "#98b54e"
-    local primaryFg       = "#e2e2e2"
+    local diffBg          = "#f0e9ce"
+    local diffAddFg       = "#7ba847"
+    local diffChangeFg    = "#8648b5"
+    local diffDeleteFg    = "#9e333b"
+    local primaryFg       = "#e3dfcf"
     local primaryBg       = "#fffcf1"
     local secondayFg      = "#afccbd"
     local primaryYellow   = primaryBlack
     local secondaryYellow = secondaryBlack
-    local primaryBlue     = "#2e62b3"
     local lightBlue       = "#84B2FF"
     local primaryMagenta  = "#ff5f00"
     local gray            = "#CEC5B9"
@@ -28,13 +28,15 @@ local function setup(options)
     vim.api.nvim_set_hl(0, "@variable", { fg = secondaryYellow })
     vim.api.nvim_set_hl(0, "Title", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "NonText", { fg = primaryMagenta })
-    vim.api.nvim_set_hl(0, "VertSplit", { fg = offGray })
+    vim.api.nvim_set_hl(0, "VertSplit", { bg = offGray })
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = primaryFg })
     vim.api.nvim_set_hl(0, "Special", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "Normal", { fg = primaryYellow, bg = primaryBg })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = gray })
     vim.api.nvim_set_hl(0, "LineNr", { fg = offGray, bg = primaryBg })
-    vim.api.nvim_set_hl(0, "Visual", { bg = lightBlue, fg = primaryBlack })
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = primaryBg, fg = gray })
+    vim.api.nvim_set_hl(0, "Visual", { bg = lightBlue })
+    vim.api.nvim_set_hl(0, "SignColumn", { bg = primaryBg, fg = offGray })
+    vim.api.nvim_set_hl(0, "ColorColumn", { bg = primaryFg })
     vim.api.nvim_set_hl(0, "CursorLine", { bg = primaryFg })
     vim.api.nvim_set_hl(0, "CursorLineNr", { bg = primaryFg, fg = primaryYellow })
     vim.api.nvim_set_hl(0, "StatusLineNC", { bg = primaryBg, fg = primaryYellow })
@@ -76,11 +78,13 @@ local function setup(options)
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", {})
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", {})
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineOk", {})
-    vim.api.nvim_set_hl(0, "Added", {})
+    vim.api.nvim_set_hl(0, "Added", { bg = diffBg, fg = diffAddFg })
+    vim.api.nvim_set_hl(0, "Changed", { bg = diffBg, fg = diffChangeFg })
+    vim.api.nvim_set_hl(0, "Removed", { bg = diffBg, fg = diffDeleteFg })
     vim.api.nvim_set_hl(0, "DiffAdd", {})
     vim.api.nvim_set_hl(0, "DiffChange", {})
-    vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = primaryBlack,  bg = secondaryGreen })
-    vim.api.nvim_set_hl(0, "GitSignsAddLn", { })
+    vim.api.nvim_set_hl(0, "GitSignsAdd", {})
+    vim.api.nvim_set_hl(0, "GitSignsAddLn", {})
 end
 
 return { setup = setup }
