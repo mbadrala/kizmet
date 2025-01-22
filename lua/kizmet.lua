@@ -16,7 +16,7 @@ local function setup(options)
     local secondaryYellow = secondaryBlack
     local primaryBlue     = "#2e62b3"
     local lightBlue       = "#84B2FF"
-    local primaryMagenta  = "#f54702"
+    local primaryMagenta  = "#ff5f00"
     local gray            = "#CEC5B9"
     local offGray         = "#817A60"
     local offBrown        = "#a38c68"
@@ -29,7 +29,7 @@ local function setup(options)
     vim.api.nvim_set_hl(0, "Title", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "NonText", { fg = primaryMagenta })
     vim.api.nvim_set_hl(0, "VertSplit", { fg = offGray })
-    vim.api.nvim_set_hl(0, "Special", { bg = primaryBg, fg = primaryYellow })
+    vim.api.nvim_set_hl(0, "Special", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "Normal", { fg = primaryYellow, bg = primaryBg })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = gray })
     vim.api.nvim_set_hl(0, "LineNr", { fg = offGray, bg = primaryBg })
@@ -51,6 +51,7 @@ local function setup(options)
     vim.api.nvim_set_hl(0, "Define", { fg = offBrown })
     vim.api.nvim_set_hl(0, "Structure", { fg = secondaryYellow })
     vim.api.nvim_set_hl(0, "Operator", { fg = primaryYellow })
+    vim.api.nvim_set_hl(0, "Parens", { bg = none })
     vim.api.nvim_set_hl(0, "Constant", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "Directory", { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "EndOfBuffer", {})
@@ -75,9 +76,11 @@ local function setup(options)
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", {})
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", {})
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineOk", {})
-    vim.api.nvim_set_hl(0, "Added", { fg = primaryGreen })
-    vim.api.nvim_set_hl(0, "DiffChange", { bg = diffBg, fg = primaryBlack })
-    vim.api.nvim_set_hl(0, "GitSignsAddLn", { bg = diffBg })
+    vim.api.nvim_set_hl(0, "Added", {})
+    vim.api.nvim_set_hl(0, "DiffAdd", {})
+    vim.api.nvim_set_hl(0, "DiffChange", {})
+    vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = primaryBlack,  bg = secondaryGreen })
+    vim.api.nvim_set_hl(0, "GitSignsAddLn", { })
 end
 
 return { setup = setup }
