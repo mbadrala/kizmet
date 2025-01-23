@@ -13,5 +13,5 @@ use 'ultrahighriskcom/kizmet'
 ## Setup
 
 ```lua
-require('kizmet').setup()
+vim.cmd('colorscheme kizmet')
 ```
