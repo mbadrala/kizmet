@@ -7,7 +7,7 @@
 Using packer
 
 ```lua
-use 'mbadrala/kizmet'
+use 'ultrahighriskcom/kizmet'
 ```
 
 ## Setup
