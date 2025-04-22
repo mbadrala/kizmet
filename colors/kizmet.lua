@@ -1,7 +1,7 @@
 vim.cmd('hi clear')
 
 vim.o.background      = "light"
-vim.g.colors_name = 'kizmet'
+vim.g.colors_name     = 'kizmet'
 
 local primaryWhite    = "#fefefe"
 local primaryBlack    = "#17160B"
@@ -36,7 +36,7 @@ vim.api.nvim_set_hl(0, "Function", { fg = func })
 vim.api.nvim_set_hl(0, "@variable.parameter", { fg = primaryYellow })
 vim.api.nvim_set_hl(0, "@variable", { fg = secondaryYellow })
 vim.api.nvim_set_hl(0, "Title", { fg = primaryYellow })
-vim.api.nvim_set_hl(0, "NonText", { fg = nonText})
+vim.api.nvim_set_hl(0, "NonText", { fg = nonText })
 vim.api.nvim_set_hl(0, "VertSplit", { bg = offGray })
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = primaryFg })
 vim.api.nvim_set_hl(0, "Special", { fg = primaryYellow })
@@ -94,5 +94,6 @@ vim.api.nvim_set_hl(0, "DiffAdd", {})
 vim.api.nvim_set_hl(0, "DiffChange", {})
 vim.api.nvim_set_hl(0, "GitSignsAdd", {})
 vim.api.nvim_set_hl(0, "GitSignsAddLn", {})
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = offBrown })
 
 return { setup = setup }
